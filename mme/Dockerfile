@@ -8,9 +8,9 @@ USER root
 
 RUN sudo su
 RUN cd oai-cn/scripts && DEBIAN_FRONTEND=noninteractive ./build_mme -i -f
-RUN cd oai-cn/scripts && ./build_mme --clean
 COPY mme.conf /usr/local/etc/oai/mme.conf 
 COPY mme_fd.conf /usr/local/etc/oai/freeDiameter/mme_fd.conf 
+RUN cd oai-cn/scripts && ./build_mme --clean
 COPY script.sh /script.sh
 RUN chmod +x /script.sh
 
