@@ -12,4 +12,4 @@ RUN cd oai-cn/scripts && ./build_hss
 COPY hss.conf /usr/local/etc/oai/hss.conf 
 COPY script.sh /script.sh
 RUN chmod +x /script.sh
-RUN sudo ./root/script.sh
+ENTRYPOINT ["/script.sh"]
