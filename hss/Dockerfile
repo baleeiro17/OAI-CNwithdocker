@@ -9,7 +9,9 @@ USER root
 RUN sudo su
 RUN cd oai-cn/scripts && DEBIAN_FRONTEND=noninteractive ./build_hss -i -F 
 RUN cd oai-cn/scripts && ./build_hss
-COPY hss.conf /usr/local/etc/oai/hss.conf 
+COPY hss.conf /usr/local/etc/oai/hss.conf
+COPY hss_fd.conf /usr/local/etc/oai/freeDiameter/hss_fd.conf
+COPY init.sql /init.sql
 COPY script.sh /script.sh
 RUN chmod +x /script.sh
-ENTRYPOINT ["/script.sh"]
+# ENTRYPOINT ["/script.sh"]
