@@ -13,4 +13,3 @@ echo " --> checking for certificates..."
 mysql --host "mysqldb" -u "root" -p"linux" "oai_db" < /oai-cn/src/oai_hss/db/oai_db.sql && echo "[OK] Database Updated" || echo "[FAIL] Database Non Updated"
 
 # running hss
-./oai-cn/scripts/run_hss 

@@ -23,6 +23,17 @@ services:
     networks:
       oai:
         ipv4_address: 192.188.2.3
+  oaimme:
+    build: mme
+    hostname: mme
+    domainname: openair4G
+    container_name: oaimme
+    privileged: true
+    depends_on: 
+      - hss
+    networks:
+      oai:
+        ipv4_address: 192.188.2.2      
 networks:
   oai:
     driver: bridge
